@@ -1,0 +1,19 @@
+Interview Question 
+
+1. what is MySQL
+2. what are difference types of data types in MySQL?
+3. What are DDL,DML,and DCL?
+4. Explain following MySQL operators-
+	a) not
+	b)in
+	c) and
+	d) or 
+	e) like
+	f) between
+5) what is projection in MySQL and how to implement projection.
+
+6)How to show all tables from database. write appropriate command
+7) what is DBMS and RDBMS
+8) list the name of SQL and NoSQL database.
+9) how to display records in ascending order which clause wil used for this.
+10) what is default port number of MySQL server.

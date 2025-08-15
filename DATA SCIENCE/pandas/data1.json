@@ -1,0 +1,12 @@
+[
+  { "name": "Angela Jones", "age": 29, "city": "New Brittany" },
+  { "name": "Robert Duke", "age": 31, "city": "Robertberg" },
+  { "name": "Amanda Swanson", "age": 58, "city": "East Tyler" },
+  { "name": "Bryce Pierce", "age": 48, "city": "Port Stevestad" },
+  { "name": "Rachel Walker", "age": 51, "city": "Underwoodton" },
+  { "name": "Terrence Anderson", "age": 32, "city": "North Laurie" },
+  { "name": "Carol Garcia", "age": 46, "city": "Taylorfort" },
+  { "name": "Audrey Taylor", "age": 39, "city": "Port Jessicastad" },
+  { "name": "Lisa Smith", "age": 65, "city": "Clarkville" },
+  { "name": "Matthew Oconnor", "age": 22, "city": "Joshualand" }
+]

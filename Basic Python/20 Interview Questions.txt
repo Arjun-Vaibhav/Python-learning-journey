@@ -1,0 +1,139 @@
+===========================================================================
+                          PRACTICAL TRICKY QUESTIONS
+===========================================================================
+Q1: Write a code to print only unique values from a list using a set.
+A (EMP):
+my_list = [1, 2, 2, 3, 4, 4, 5]
+unique_values = set(my_list)
+print("Unique values:", unique_values)
+
+Q2: Given a list of numbers, print "Even", "Odd", or "Zero" for each using if, elif, else.
+A (EMP):
+
+nums = [0, 1, 2, 3, 4]
+for num in nums:
+    if num == 0:
+        print("Zero")
+    elif num % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
+Q3: Given a string, print only the digits in it.
+A (EMP):
+
+text = "abc123def45"
+for char in text:
+    if char.isdigit():
+        print(char)
+
+Q4: Count the number of vowels in a string.
+A (EMP):
+
+text = "Hello World"
+vowel_count = 0
+for char in text.lower():
+    if char in "aeiou":
+        vowel_count += 1
+print("Vowels:", vowel_count)
+
+Q5: Print the common keys from two dictionaries.
+A (EMP):
+d1 = {"a": 1, "b": 2, "c": 3}
+d2 = {"b": 5, "c": 8, "d": 6}
+for key in d1:
+    if key in d2:
+        print(key)
+
+Q6: Convert a dictionary to a list of tuples.
+A (EMP):
+data = {"a": 1, "b": 2, "c": 3}
+tuple_list = []
+for key, value in data.items():
+    tuple_list.append((key, value))
+print(tuple_list)
+
+Q7: Loop through a dictionary and print keys that have integer values greater than 10.
+A (EMP):
+
+data = {"a": 5, "b": 15, "c": 8, "d": 20}
+for key, value in data.items():
+    if isinstance(value, int) and value > 10:
+        print(key)
+
+Q8: From a tuple of strings, print the strings that start with a vowel.
+A (EMP):
+
+words = ("apple", "banana", "orange", "grape", "umbrella")
+for word in words:
+    if word[0].lower() in 'aeiou':
+        print(word)
+
+Q9: Reverse a list without using reverse() or slicing.
+A (EMP):
+
+nums = [1, 2, 3, 4]
+reversed_list = []
+for i in nums:
+    reversed_list.insert(0, i)
+print(reversed_list)
+
+Q10: Count how many strings in a list have length > 3 and start with "A".
+A (EMP):
+
+names = ["Anu", "Aman", "Bob", "Aarti", "Amy"]
+count = 0
+for name in names:
+    if name.startswith("A") and len(name) > 3:
+        count += 1
+print("Count:", count)
+
+===========================================================================
+                                THEORY QUESTIONS
+===========================================================================
+
+Q1: Why can’t you use a list as a key in a dictionary?
+ANS:Because lists are mutable and unhashable. Dictionary keys must be hashable and immutable
+  so that their hash value remains constant.
+
+Q2: Is None == False? Is None is False?
+ANS:None == False is False.
+None is False is also False.
+They are different objects and values.
+
+Q3: Are strings in Python mutable or immutable? Can they be changed in-place?
+ANS:Strings are immutable. You cannot change their characters in-place. You must create a new string.
+
+Q4: If you store mutable values (like lists) inside a dictionary and modify them, does the dictionary change?
+ANS:Yes, because the dictionary stores a reference to the list, and modifying the list affects 
+the referenced object.
+
+Q5: Can a tuple be a key in a dictionary? Under what condition?
+ANS:Yes, if the tuple contains only immutable and hashable objects like numbers or strings.
+
+Q6: Is the expression [] == [] True or False? What about [] is []? Explain the difference.
+ANS: [] == [] is True because both lists have the same content.
+[] is [] is False because they are two different objects in memory. == checks value equality, 
+is checks reference (identity).
+
+Q7: Can dictionary keys be mutable data types like lists or other dictionaries? Why or why not?
+ANS: No, dictionary keys must be immutable and hashable. Lists and dictionaries are mutable and unhashable,
+ so using them as keys would raise a TypeError.
+
+Q8: What will happen if you try to access a dictionary key that doesn’t exist using [] vs using .get()?
+ANS: Using [] will raise a KeyError, but .get() will return None (or a default value if provided)
+ without crashing the program. So .get() is safer for uncertain keys.
+
+Q9: If a set is unordered, how does Python internally know if an item exists in it or not?
+ANS: Python uses a hash function to assign each element a hash value. These are stored in a hash table,
+allowing constant-time membership checks even though the set is unordered.
+
+Q10: Between list, set, tuple, and dictionary – which ones are mutable and which are not? And how does that
+affect their usability in real-world code?
+ANS:Lists, sets, and dictionaries are mutable; tuples are immutable.
+Mutable structures are good for dynamic data, while immutable ones are used where data integrity or hashability 
+(e.g., keys in dictionaries) is required. 20 I want to this types of question 
+
+
+
+
