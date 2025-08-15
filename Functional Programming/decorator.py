@@ -30,72 +30,72 @@ def deco(fun):
         return total + num3
     return inner
 #=======================================================================================================\
-# @deco
-# def sum():
-#     num1 = eval("input('Enter num1: ')")  # Corrected eval syntax
-#     num2 = eval("input('Enter num2: ')")
-#     return num1 + num2
-# print(sum())
+@deco
+def sum():
+    num1 = eval("input('Enter num1: ')")  # Corrected eval syntax
+    num2 = eval("input('Enter num2: ')")
+    return num1 + num2
+print(sum())
 #=======================================================================================================
 
 #Example 4
 
-# def deco (fun):
-#     def inner(n1,n2,n3):
-#         result=fun(n1,n2)
-#         return result+n3
-#     return inner
-# @deco
-# def add (n1,n2):
-#     return n1+n2
-# print(add(10,20,30))
+def deco (fun):
+    def inner(n1,n2,n3):
+        result=fun(n1,n2)
+        return result+n3
+    return inner
+@deco
+def add (n1,n2):
+    return n1+n2
+print(add(10,20,30))
 
 #=======================================================================================================
-# def login(fun):
-#     def inner():
-#         username=input('Username:')
-#         password=input("Password:")
-#         if username=='vaibhav' and password=="arjun123":
-#             fun()
-#         else:
-#             print('Invalid username of password')
-#     return inner
+def login(fun):
+    def inner():
+        username=input('Username:')
+        password=input("Password:")
+        if username=='vaibhav' and password=="arjun123":
+            fun()
+        else:
+            print('Invalid username of password')
+    return inner
 
-# @login
-# def home():
-#     print('welcome to home page..')
+@login
+def home():
+    print('welcome to home page..')
 
-# @login
-# def dash():
-#     print('welcome to Your dashboars...')
+@login
+def dash():
+    print('welcome to Your dashboars...')
 
 
-# home()
+home()
 #=======================================================================================================
-# student=['kunal','rahul','vijay','sagar','irana']
-# print(list(enumerate(student,1)))
-#=======================================================================================================
-
-# student=['kunal','rahul','vijay','sagar','irana']
-# print('roll   Student_name')
-# for index,name in enumerate(student,1):
-#     print(index,'---->',name)
+student=['kunal','rahul','vijay','sagar','irana']
+print(list(enumerate(student,1)))
 #=======================================================================================================
 
-# roll=[1,2,3,4,5]
-# student=['kunal','rahul','vijay','sagar','irana']
-# print(list(zip(roll,student)))
+student=['kunal','rahul','vijay','sagar','irana']
+print('roll   Student_name')
+for index,name in enumerate(student,1):
+    print(index,'---->',name)
 #=======================================================================================================
 
-# roll=[1,2,3,4,5]
-# student=['kunal','rahul','vijay','sagar','irana']
-# for name,mark in zip(roll,student):
-#     print(roll,'->',mark)
+roll=[1,2,3,4,5]
+student=['kunal','rahul','vijay','sagar','irana']
+print(list(zip(roll,student)))
 #=======================================================================================================
 
-# roll=[1,2,3,4,5]
-# student=['kunal','rahul','vijay','sagar','irana']
-# print(dict(zip(roll,student)))
+roll=[1,2,3,4,5]
+student=['kunal','rahul','vijay','sagar','irana']
+for name,mark in zip(roll,student):
+    print(roll,'->',mark)
+#=======================================================================================================
+
+roll=[1,2,3,4,5]
+student=['kunal','rahul','vijay','sagar','irana']
+print(dict(zip(roll,student)))
 
 #=======================================================================================================
 
