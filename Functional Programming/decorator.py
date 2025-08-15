@@ -6,38 +6,37 @@
 ==> 
 '''
 
-# def deco (fun):
-#     def inner():
-#         fun()
-#         print('hello welcome to TKA')
-#         print('hello welcome to TKA')
-#     return inner
+def deco (fun):
+    def inner():
+        fun()
+        print('hello welcome to TKA')
+        print('hello welcome to TKA')
+    return inner
+#=======================================================================================================\
+def printer():
+    print('hello welcome to TKA')
+    print('hello welcome to TKA')
+    print('hello welcome to TKA')
+inner=deco(printer)
+inner()
 
-# def printer():
-#     print('hello welcome to TKA')
-#     print('hello welcome to TKA')
-#     print('hello welcome to TKA')
-# inner=deco(printer)
-# inner()
-
-
+#=======================================================================================================\
 #Example 2
 
-# def deco(fun):
-#     def inner():
-#         total = fun()  # Call the original function to get num1 + num2
-#         num3 = eval("input('Enter num3: ')")  # Corrected eval syntax
-#         return total + num3
-#     return inner
-
+def deco(fun):
+    def inner():
+        total = fun()  # Call the original function to get num1 + num2
+        num3 = eval("input('Enter num3: ')")  # Corrected eval syntax
+        return total + num3
+    return inner
+#=======================================================================================================\
 # @deco
 # def sum():
 #     num1 = eval("input('Enter num1: ')")  # Corrected eval syntax
 #     num2 = eval("input('Enter num2: ')")
 #     return num1 + num2
-
 # print(sum())
-
+#=======================================================================================================
 
 #Example 4
 
@@ -51,7 +50,7 @@
 #     return n1+n2
 # print(add(10,20,30))
 
-
+#=======================================================================================================
 # def login(fun):
 #     def inner():
 #         username=input('Username:')
@@ -72,33 +71,33 @@
 
 
 # home()
-
+#=======================================================================================================
 # student=['kunal','rahul','vijay','sagar','irana']
 # print(list(enumerate(student,1)))
-
+#=======================================================================================================
 
 # student=['kunal','rahul','vijay','sagar','irana']
 # print('roll   Student_name')
 # for index,name in enumerate(student,1):
 #     print(index,'---->',name)
-
+#=======================================================================================================
 
 # roll=[1,2,3,4,5]
 # student=['kunal','rahul','vijay','sagar','irana']
 # print(list(zip(roll,student)))
-
+#=======================================================================================================
 
 # roll=[1,2,3,4,5]
 # student=['kunal','rahul','vijay','sagar','irana']
 # for name,mark in zip(roll,student):
 #     print(roll,'->',mark)
-
+#=======================================================================================================
 
 # roll=[1,2,3,4,5]
 # student=['kunal','rahul','vijay','sagar','irana']
 # print(dict(zip(roll,student)))
 
-
+#=======================================================================================================
 
 def sum3(abc):
     def xyz(num1,num2,num3):
@@ -111,6 +110,6 @@ def sum(num1,num2):
     return sum
 print(sum(2,4,6)) 
 
+#=======================================================================================================
 
-# 
 
