@@ -1,57 +1,64 @@
 '''
 
 '''
+#========================================================================================
+num=100
+def fun():
+    x=10
+    return x
+print('x value is:',fun())
 
-# num=100
-# def fun():
-#     x=10
-#     return x
-# print('x value is:',fun())
+#========================================================================================
 
-# x=10
-# def fun():
-#     y=20
-#     print('welcome')
-#     print('hello')
-#     return y
-# print(fun())
-# print("coding...")
-# a=fun()
-# print(a)
+x=10
+def fun():
+    y=20
+    print('welcome')
+    print('hello')
+    return y
+print(fun())
+print("coding...")
+a=fun()
+print(a)
+#========================================================================================
 
-# def  iseven(num):
-#     if num%2==0:
-#         return True
-#     else:
-#         return False
+def  iseven(num):
+    if num%2==0:
+        return True
+    else:
+        return False
+#========================================================================================
 
-# def ispositive(num):
-#     if num>=0:
-#         return True
-#     else:
-#         return False
+def ispositive(num):
+    if num>=0:
+        return True
+    else:
+        return False
+#========================================================================================
 
 #WAP to check number is prime or not
 
-# def isprime(num):
-#     for i in range(2,num):
-#         if num%i==0:
-#             return False
-#     return True
-# print(isprime(6))
+def isprime(num):
+    for i in range(2,num):
+        if num%i==0:
+            return False
+    return True
+print(isprime(6))
+#========================================================================================
 
 
-# add=[]
-# adds=[]
-# def isprime(num):
-#  add=[]
-#  adds=[]
-#     for i in num:
-#         for i in range(2,num):       
-#             if num%i==0:
-#               add.append(i)
-#     adds.append(i)
-# print(isprime([1,2,3,4,5]))
+add=[]
+adds=[]
+def isprime(num):
+    add=[]
+    adds=[]
+    for i in num:
+        for i in range(2,num):       
+            if num%i==0:
+                add.append(i)
+        adds.append(i)
+print(isprime([1,2,3,4,5]))
+#========================================================================================
 
 # def is_prime(lst):
 #     prime_numbers=[]
