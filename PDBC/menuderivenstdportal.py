@@ -1,13 +1,13 @@
 import mysql.connector
 
+# Database connection
 conn = mysql.connector.connect(
     host='localhost',
-    user='root',              
-    password='',
+    user='root',
+    password='9970353770',
     database='db_7263'
 )
-
-cursor = conn.cursor()       
+cursor = conn.cursor()
 
 def addStudent():
     try:
@@ -15,95 +15,119 @@ def addStudent():
         name = input('Enter Student Name: ')
         std = int(input("Enter Student class: "))
         marks = int(input('Enter Student Marks: '))
-    except ValueError:
-        print("dont Enter any symbol,alpnumeric value..")    
-        query = "INSERT INTO student VALUES (%s, %s, %s, %s)"
+        
+        query = "INSERT INTO student(id, name, std, marks) VALUES (%s, %s, %s, %s)"
         val = (id, name, std, marks)
         cursor.execute(query, val)
         conn.commit()
-        print('Student Record Added Successfully..\n')
-def GetAllStudent():
+        print('✅ Student Record Added Successfully.\n')
+    except ValueError:
+        print("❌ Invalid input. Please enter numbers for ID, class, and marks.\n")
+
+def getAllStudent():
     cursor.execute("SELECT * FROM student")
     results = cursor.fetchall()
-    for row in results:
-        print(row)
-def UpdateStudent():
-    current_id = int(input('Enter the Student ID you want to update: '))    
-    new_id = int(input('Enter New ID: '))
-    name = input('Enter New Student Name: ')
-    std = int(input("Enter New Student Class: "))
-    marks = int(input('Enter New Student Marks: '))
+    print_results(results)
 
-    query = "UPDATE student SET id=%s, name=%s, std=%s, marks=%s WHERE id=%s"
-    val = (new_id, name, std, marks, current_id)
+def updateStudent():
+    try:
+        current_id = int(input('Enter the Student ID you want to update: '))
+        new_id = int(input('Enter New ID: '))
+        name = input('Enter New Student Name: ')
+        std = int(input("Enter New Student Class: "))
+        marks = int(input('Enter New Student Marks: '))
 
-    cursor.execute(query, val)
-    conn.commit()
-    print('✅ Student Record Updated Successfully..\n')
-def DeleteStd():
-    id = int(input('Enter the Student ID you want to Delete: '))
-    query3="delete from student where id=%s"
-    val=(id,)
-    cursor.execute(query3,val)
-    conn.commit()
-    print('✅ Student Record Deleted Successfully..\n')
-def GetdataByid():
-    id=int(input('Enter Id you want to  get data:'))
-    query="SELECT * FROM student WHERE id=%s"
-    val=(id,)
-    cursor.execute(query,val)
-    idstddata=cursor.fetchall()
-    for datas in idstddata:
-        print(datas)
-    conn.commit()
+        query = "UPDATE student SET id=%s, name=%s, std=%s, marks=%s WHERE id=%s"
+        val = (new_id, name, std, marks, current_id)
+
+        cursor.execute(query, val)
+        conn.commit()
+        print('✅ Student Record Updated Successfully.\n')
+    except ValueError:
+        print("❌ Invalid input. Please enter numbers for ID, class, and marks.\n")
+
+def deleteStd():
+    try:
+        id = int(input('Enter the Student ID you want to Delete: '))
+        query = "DELETE FROM student WHERE id=%s"
+        cursor.execute(query, (id,))
+        conn.commit()
+        print('✅ Student Record Deleted Successfully.\n')
+    except ValueError:
+        print("❌ Invalid input. ID must be a number.\n")
+
+def getDataById():
+    try:
+        id = int(input('Enter Id you want to get data: '))
+        query = "SELECT * FROM student WHERE id=%s"
+        cursor.execute(query, (id,))
+        results = cursor.fetchall()
+        print_results(results)
+    except ValueError:
+        print("❌ Invalid input. ID must be a number.\n")
+
 def getStudentByName():
     name = input("Enter Student Name to search: ")
-    query = "SELECT * FROM student WHERE name = %s"
-    val = (name,)
-    cursor.execute(query,val)
-    result = cursor.fetchall()
-    for datas in result:
-        print(datas)
+    query = "SELECT * FROM student WHERE name=%s"
+    cursor.execute(query, (name,))
+    results = cursor.fetchall()
+    print_results(results)
 
 def getAllStudentsAscending():
     query = "SELECT * FROM student ORDER BY name ASC"
     cursor.execute(query)
-    result = cursor.fetchall()
-    for i in result:
-        print(i)
+    results = cursor.fetchall()
+    print_results(results)
+
+def print_results(results):
+    if results:
+        for row in results:
+            print(row)
+    else:
+        print("⚠ No records found.\n")
+
+# Main Menu Loop
 ans = "Y"
-while ans.upper():    
-    print('\t\t\t Student Portal')
+while ans.upper() == 'Y':
+    print('\n\t\t\t Student Portal')
     print("*" * 100)
-    print('\t\t\t 1. Add new student')
-    print('\t\t\t 2. Get All Students')
-    print('\t\t\t 3. Update Student')
-    print('\t\t\t 4. Delete Student')
-    print('\t\t\t 5. Get Data student by id')
-    print('\t\t\t 6. Get Data student by name')
-    print('\t\t\t 7. Get All Students in Ascending Order')
-    print("*" *100)
+    print('\t1. Add new student')
+    print('\t2. Get All Students')
+    print('\t3. Update Student')
+    print('\t4. Delete Student')
+    print('\t5. Get Data student by ID')
+    print('\t6. Get Data student by Name')
+    print('\t7. Get All Students in Ascending Order')
+    print("*" * 100)
 
     try:
         choice = int(input('Enter your choice: '))
-        if choice>=7:
-            print('plz Enter choice between 1 to 7')        
+        if choice < 1 or choice > 7:
+            print('⚠ Please enter choice between 1 to 7\n')
+            continue
     except ValueError:
-        print("Invalid input. Please enter a number.\n")
+        print("❌ Invalid input. Please enter a number.\n")
         continue
+
     if choice == 1:
         addStudent()
     elif choice == 2:
-        GetAllStudent()    
-    elif choice==3:
-        UpdateStudent()
-    elif choice==4:
-        DeleteStd()
-    elif choice==5:
-        GetdataByid()
-    elif choice==6:
-       getStudentByName()
-    elif choice==7:
+        getAllStudent()
+    elif choice == 3:
+        updateStudent()
+    elif choice == 4:
+        deleteStd()
+    elif choice == 5:
+        getDataById()
+    elif choice == 6:
+        getStudentByName()
+    elif choice == 7:
         getAllStudentsAscending()
-    ans = input("Do you want to continue? (Y/N):  ")
+
+    ans = input("Do you want to continue? (Y/N): ")
+
+else:
+    print('👋 Thanks for using this program!')
+
+cursor.close()
 conn.close()

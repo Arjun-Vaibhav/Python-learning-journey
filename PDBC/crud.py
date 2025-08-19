@@ -3,7 +3,7 @@ import mysql.connector
 conn =mysql.connector.connect(
     host='localhost',
     username='root',
-    password='',
+    password='9970353770',
     database='db_7263'
 )
 
@@ -14,7 +14,7 @@ age=int(input('Enter the age:'))
 role=input('Enter employee role:')
 
 cursor=conn.cursor()
-query="insert into person values(%s,%s,%s,%s)"
+query="insert into person(pid,pname,age,role) values(%s,%s,%s,%s)"
 val=(pid,pname,age,role)
 
 cursor.execute(query,val)
