@@ -1,4 +1,10 @@
+class student:
+    course="PYTHON"
 
+s1=student()
+s2=student()
+print('*'*50)
+print("\t Enter First Student data..")
 print('*'*50)
 s1.sno=int(input('Enter serial no:'))
 s1.name=input('Enter Student name:')
@@ -9,17 +15,21 @@ print('*'*50)
 s2.sno=int(input('Enter serial no:'))
 s2.name=input('Enter Student name:')
 s2.marks=eval(input('Student Marks:'))
+
 print('*'*50)
 print('\t Display First Student data.')
 print('*'*50)
 print('\t student sno={}'.format(s1.sno))
 print('\t student name={}'.format(s1.name))
-print('\t student Marks:{}',format(s1.marks))
+print('\t student Marks={}'.format(s1.marks))
+print('\t student course=',student.course)
 
 print('*'*50)
-
-print('\t Display First Student data.')
+print('\t Display second Student data.')
 print('*'*50)
 print('\t student sno={}'.format(s2.sno))
 print('\t student name={}'.format(s2.name))
-print('\t student Marks:{}',format(s2.marks))
+print('\t student Marks={}'.format(s2.marks))
+print('\t student course=',student.course)
+print("student 1 Datails:",s1.__dict__)
+print("student 2 Datails:",s2.__dict__)
